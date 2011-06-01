@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<% if @upload_file.file_upload.exists? then %>
+	<%= image_tag(@upload_file.file_upload.url(:thumb)) %>
+	<%= link_to "Download", @upload_file.file_upload.url(:original) %>
+  <% else %>
+	No Attachments
+  <% end %>
+
+
+<%= link_to 'Edit', edit_upload_file_path(@upload_file) %> |
+<%= link_to 'Back', upload_files_path %>
