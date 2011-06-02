@@ -1,9 +1,8 @@
 SpiralaxPm::Application.routes.draw do
-<<<<<<< HEAD
+
   resources :uploads
-=======
   resources :upload_files
->>>>>>> 5f22c71704793a7912132c9357282824c30bf41c
+
 
   resources :discussions do
     resources :comments

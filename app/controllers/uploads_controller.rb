@@ -5,6 +5,11 @@ class UploadsController < ApplicationController
 
   def show
     @upload = Upload.find(params[:id])
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @upload }
+    end
   end
 
   def new
@@ -22,6 +27,16 @@ class UploadsController < ApplicationController
 
   def edit
     @upload = Upload.find(params[:id])
+  end
+  
+  def destroy
+    @upload = Upload.find(params[:id])
+    @upload.destroy
+    
+    respond_to do |format|
+      format.html { redirect_to(uploads_url) }
+      format.xml  { head :ok }
+    end
   end
 
   def update
