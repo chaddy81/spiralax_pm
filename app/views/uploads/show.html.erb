@@ -1,4 +1,6 @@
 <%= image_tag @upload.upload.url %>
 <%= image_tag @upload.upload.url(:medium) %>
 <%= image_tag @upload.upload.url(:thumb) %>
-<%= debug @upload %>
+
+<%= link_to 'Show', @upload %> |
+<%= link_to 'Back', uploads_path %>
