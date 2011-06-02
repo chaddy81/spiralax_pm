@@ -1,0 +1,8 @@
+.odd{background:#F2F8FA;}
+.odd td, .even td{padding:3px 7px;}
+h1{font:bold 24px/24px 'century gothic', arial, sans-serif; color:#646a6d;}
+th{font:bold 14px/14px 'century gothic', arial, sans-serif; color:#646a6d;}
+td{font:normal 12px/12px 'century gothic', arial, sans-serif; color:#646a6d;padding:5px 10px;}
+td:hover{background-color:transparent;}
+a{font:normal 12px/12px 'century gothic', arial, sans-serif; color:#ddd;}
+a:hover{color:blue;background-color:transparent;}

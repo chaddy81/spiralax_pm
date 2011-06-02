@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @discussion.title %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @discussion.comment %>
+</p>
+
+<p>
+  <b>Attachment:</b>
+  <% if @discussion.photo.exists? then %>
+	<%= image_tag(@discussion.photo.url(:thumb)) %>
+	<%= link_to "Download", @discussion.photo.url(:original) %>
+  <% else %>
+	No Attachments
+  <% end %>
+</p>
+
+<h3>Comments</h3> 
+<div id="comments">
+<% @discussion.comments.each do |comment|%>
+	<p>By: <%= comment.name %></p>
+	<%= comment.comment %>
+	<p>
+		<%= button_to "Delete", [@discussion, comment],
+				:confirm => "Are you sure?", :method => :delete %>
+	</p>
+<% end %>
+</div>
+
+<%= form_for [@discussion, Comment.new] do |form| %>
+	<%= form.label :name, "Name" %>
+	<%= form.text_field :name %><br />
+
+	<%= form.label :comment, "Comment" %>
+	<%= form.text_area :comment %><br />
+
+	<%= form.submit %>
+<% end %>
+
+<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+<%= link_to 'Back', discussions_path %>
