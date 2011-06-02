@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110601043657) do
+=======
+ActiveRecord::Schema.define(:version => 20110531044911) do
+>>>>>>> 5f22c71704793a7912132c9357282824c30bf41c
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -49,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20110601043657) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "uploads", :force => true do |t|
     t.string   "upload_file_name"
     t.string   "upload_content_type"
@@ -57,4 +62,6 @@ ActiveRecord::Schema.define(:version => 20110601043657) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> 5f22c71704793a7912132c9357282824c30bf41c
 end
