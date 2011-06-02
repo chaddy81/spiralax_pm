@@ -1,0 +1,37 @@
+<%= form_for(@to_do) do |f| %>
+  <% if @to_do.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@to_do.errors.count, "error") %> prohibited this to_do from being saved:</h2>
+
+      <ul>
+      <% @to_do.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :due %><br />
+    <%= f.date_select :due %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= f.select :priority, options_for_select(["High", "Medium", "Low"]) %>
+</div>
+  <div class="field">
+    <%= f.label :progress %><br />
+    <%= f.select :progress, options_for_select(["Not Started", "In Process", "Completed"]) %>  
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
