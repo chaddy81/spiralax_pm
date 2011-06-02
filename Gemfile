@@ -10,6 +10,7 @@ gem 'rake', '0.8.7'
 gem 'haml'
 gem 'rmagick'
 gem 'paperclip'
+gem 'paperclipftp'
 gem 'heroku'
 
 # Use unicorn as the web server
