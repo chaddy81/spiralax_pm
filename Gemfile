@@ -10,7 +10,10 @@ gem 'rake', '0.8.7'
 gem 'haml'
 gem 'rmagick'
 gem 'paperclip'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5f22c71704793a7912132c9357282824c30bf41c
 # Use unicorn as the web server
 # gem 'unicorn'
 
