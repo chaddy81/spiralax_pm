@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(:version => 20110601043657) do
     t.datetime "updated_at"
   end
 
+  create_table "upload_files", :force => true do |t|
+    t.string   "file_name"
+    t.string   "file_type"
+    t.integer  "file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "uploads", :force => true do |t|
     t.string   "upload_file_name"
     t.string   "upload_content_type"
