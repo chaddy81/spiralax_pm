@@ -4,7 +4,7 @@ class Upload < ActiveRecord::Base
       :path => "/spiralax/rails/images/:attachment/:id/:style/:filename",
       :url => "http://spiralax.com/rails/images/:attachment/:id/:style/:filename",
       :storage => :ftp,
-      :ftp_credentials => { :host => 'ftp.spiralax', :username => 'revelry2009', :password => 'Keegan0610' },
+      :ftp_credentials => { :host => 'ftp.spiralax.com', :username => 'revelry2009', :password => 'Keegan0610' },
       :ftp_passive_mode => false,
       :ftp_timeout => 90,
       :ftp_verify_size_on_upload => false,
