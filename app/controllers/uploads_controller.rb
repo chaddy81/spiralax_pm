@@ -50,5 +50,4 @@ class UploadsController < ApplicationController
   
   def write
   end
-  end
 end
