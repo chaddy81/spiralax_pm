@@ -18,13 +18,13 @@ class UploadsController < ApplicationController
 
   def create
     @upload = Upload.new(params[:upload])
-<<<<<<< HEAD
+
     if @upload.save
       redirect_to @upload
     else
       redirect_to @upload
     end
-=======
+
       if @upload.save
         format.html { redirect_to(@upload, :notice => 'Upload Successful.') }
         format.xml  { render :xml => @upload, :status => :created, :location => @upload }
@@ -32,7 +32,7 @@ class UploadsController < ApplicationController
        format.html { @upload = render :action => "new" }
        format.xml  { render :xml => @upload.errors, :status => :unprocessable_entity }
      end
->>>>>>> 5a4ae7ff19ed6dbc3ab71f9f564d6ca0863833e0
+
   end
 
   def edit
