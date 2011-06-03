@@ -19,20 +19,15 @@ class UploadsController < ApplicationController
   def create
     @upload = Upload.new(params[:upload])
 
-    if @upload.save
-      redirect_to @upload
-    else
-      redirect_to @upload
-    end
-
+    respond_to do |format|
       if @upload.save
-        format.html { redirect_to(@upload, :notice => 'Upload Successful.') }
+        format.html { redirect_to(@upload, :notice => 'Upload was successfully added.') }
         format.xml  { render :xml => @upload, :status => :created, :location => @upload }
       else
-       format.html { @upload = render :action => "new" }
-       format.xml  { render :xml => @upload.errors, :status => :unprocessable_entity }
-     end
-
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @upload.errors, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def edit
@@ -50,9 +45,16 @@ class UploadsController < ApplicationController
   end
 
   def update
-    @upload = Upload.find(params[:id])
-    if @upload.update_attributes(params[:upload])
-      redirect_to @upload
+    @upload = Discussion.find(params[:id])
+
+    respond_to do |format|
+      if @upload.update_attributes(params[:discussion])
+        format.html { redirect_to(@upload, :notice => 'Discussion was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @upload.errors, :status => :unprocessable_entity }
+      end
     end
   end
 end
