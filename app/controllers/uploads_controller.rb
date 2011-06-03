@@ -47,4 +47,8 @@ class UploadsController < ApplicationController
       redirect_to @upload
     end
   end
+  
+  def write
+  end
+  end
 end
