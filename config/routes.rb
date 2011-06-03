@@ -1,8 +1,6 @@
 SpiralaxPm::Application.routes.draw do
 
   resources :uploads
-  resources :upload_files
-
 
   resources :discussions do
     resources :comments
