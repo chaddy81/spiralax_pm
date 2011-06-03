@@ -21,9 +21,9 @@ class UploadsController < ApplicationController
       if @upload.save
         format.html { redirect_to(@upload, :notice => 'Upload Successful.') }
         format.xml  { render :xml => @upload, :status => :created, :location => @upload }
-      # else
-       # format.html { render :action => "new" }
-       # format.xml  { render :xml => @upload.errors, :status => :unprocessable_entity }
+      else
+       format.html { @upload = render :action => "new" }
+       format.xml  { render :xml => @upload.errors, :status => :unprocessable_entity }
      end
   end
 
