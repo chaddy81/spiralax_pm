@@ -7,7 +7,7 @@ class Upload < ActiveRecord::Base
                       :storage => :ftp,
                       :ftp_credentials => { :host => 'ftp.spiralax.com', :username => 'revelry2009', :password => 'Keegan0610' },
                       :ftp_passive_mode => false,
-                      :ftp_timeout => 90,
+                      :ftp_timeout => 120,
                       :ftp_verify_size_on_upload => false,
                       :ftp_debug_mode => false
 end
