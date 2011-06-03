@@ -13,7 +13,7 @@ class UploadsController < ApplicationController
   end
 
   def new
-    @upload = Upload.new(params[:upload])
+    @upload = Upload.new
   end
 
   def create
@@ -46,8 +46,5 @@ class UploadsController < ApplicationController
     if @upload.update_attributes(params[:upload])
       redirect_to @upload
     end
-  end
-  
-  def write
   end
 end
