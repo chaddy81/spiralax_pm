@@ -2,7 +2,7 @@ class Upload < ActiveRecord::Base
   
   has_attached_file :upload,
       :styles => { :medium => "300x300>", :thumb  => "100x100>" },
-      :path => "/spiralax/rails/images/:attachment/:id/:style/:filename",
+      :path => "spiralax/rails/images/:attachment/:id/:style/:filename",
                       :url => "http://spiralax.com/images/:attachment/:id/:style/:filename",
                       :storage => :ftp,
                       :ftp_credentials => { :host => 'ftp.spiralax.com', :username => 'revelry2009', :password => 'Keegan0610' },
