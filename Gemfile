@@ -11,7 +11,7 @@ gem 'haml'
 gem 'rmagick'
 gem 'paperclip'
 gem 'heroku'
-gem 'paperclipftp'
+gem 'aws-s3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
