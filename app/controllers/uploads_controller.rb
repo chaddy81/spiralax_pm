@@ -13,7 +13,7 @@ class UploadsController < ApplicationController
   end
 
   def new
-    @upload = Upload.new
+    @upload = Upload.new(params[:upload])
   end
 
   def create
