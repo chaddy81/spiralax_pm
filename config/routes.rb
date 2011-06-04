@@ -1,5 +1,7 @@
 SpiralaxPm::Application.routes.draw do
 
+  resources :milestones
+
   resources :uploads
 
   resources :discussions do
