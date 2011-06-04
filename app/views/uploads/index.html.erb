@@ -8,7 +8,7 @@
 
 	
 <% @uploads.each do |x| %>
-d=x.created_at
+<% d = x.created_at %>
 <tr>
   <td><%= x.upload_file_name%></td>
   <td><%= image_tag x.upload.url(:thumb) %></td>
