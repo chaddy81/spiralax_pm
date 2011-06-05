@@ -12,6 +12,7 @@ gem 'rmagick'
 gem 'paperclip'
 gem 'heroku'
 gem 'aws-s3'
+gem 'lock'
 
 # Use unicorn as the web server
 # gem 'unicorn'
