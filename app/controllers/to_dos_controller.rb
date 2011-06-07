@@ -4,7 +4,7 @@ class ToDosController < ApplicationController
 
   # GET /to_dos
   # GET /to_dos.xml
-  def index
+def index
     @to_dos = ToDo.all
 
     respond_to do |format|
@@ -12,7 +12,7 @@ class ToDosController < ApplicationController
       format.xml  { render :xml => @to_dos }
     end
   end
-
+ 
   # GET /to_dos/1
   # GET /to_dos/1.xml
   def show
