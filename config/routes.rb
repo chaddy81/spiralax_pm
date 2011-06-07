@@ -1,5 +1,6 @@
 SpiralaxPm::Application.routes.draw do
 
+  resources :projects
   resources :milestones
 
   resources :uploads
@@ -9,6 +10,9 @@ SpiralaxPm::Application.routes.draw do
   end
 
   resources :to_dos
+ 
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
