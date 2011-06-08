@@ -1,4 +1,5 @@
 class Upload < ActiveRecord::Base
+  belongs_to :project
   
   has_attached_file :upload,
     :styles => { :thumb => '100x100>', :medium => '300x300>'},
