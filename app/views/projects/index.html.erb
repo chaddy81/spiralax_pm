@@ -1,4 +1,4 @@
-<h1>Listing projects</h1>
+<h1>Projects</h1>
 
 <table>
   <tr>
@@ -21,5 +21,24 @@
 </table>
 
 <br />
+
+<h1>To Do</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @to_dos.each do |to_do| %>
+  <tr>
+    <td><%= to_do.title %></td>
+    <td><%= to_do.body %></td>
+  </tr>
+<% end %>
+</table>
 
 <%= link_to 'New Project', new_project_path %>

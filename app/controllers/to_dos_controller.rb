@@ -4,7 +4,7 @@ class ToDosController < ApplicationController
 
   # GET /to_dos
   # GET /to_dos.xml
-def index
+  def index
     @to_dos = ToDo.all
 
     respond_to do |format|
@@ -16,6 +16,7 @@ def index
   # GET /to_dos/1
   # GET /to_dos/1.xml
   def show
+    @to_dos = ToDo.all
     @to_do = ToDo.find(params[:id])
 
     respond_to do |format|
@@ -47,11 +48,16 @@ def index
 
     respond_to do |format|
       if @to_do.save
-        format.html { redirect_to(@to_do, :notice => 'To do was successfully created.') }
-        format.xml  { render :xml => @to_do, :status => :created, :location => @to_do }
+        @to_do = ToDo.new(:title => params[:to_do][:title], :project_id => "1")
+        format.html { redirect_to(@to_do, :notice => 'To do was successfully updated.') }
+        #format.html { redirect_to(@to_do, :notice => 'To do was successfully created.') }
+        #format.xml  { render :xml => @to_do, :status => :created, :location => @to_do }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @to_do.errors, :status => :unprocessable_entity }
+        
+        render :action => 'new'
+
+        #format.html { render :action => "new" }
+        #format.xml  { render :xml => @to_do.errors, :status => :unprocessable_entity }
       end
     end
   end
