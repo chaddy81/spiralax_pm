@@ -1,6 +1,10 @@
 class Upload < ActiveRecord::Base
   belongs_to :project
+<<<<<<< HEAD
+  
+=======
   has_one :project
+>>>>>>> 3161727fba2dd844895870aa4250bb0b6b6bccbf
   has_attached_file :upload,
     :styles => { :thumb => '100x100>', :medium => '300x300>'},
     :storage => :s3,
