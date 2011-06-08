@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110607035650) do
+=======
+ActiveRecord::Schema.define(:version => 20110607181056) do
+>>>>>>> 3161727fba2dd844895870aa4250bb0b6b6bccbf
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -29,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110607035650) do
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.integer  "project_id"
   end
 
   create_table "milestones", :force => true do |t|
@@ -37,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20110607035650) do
     t.string   "priority"
     t.string   "assigned"
     t.date     "due"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110607035650) do
     t.string   "progress"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_id"
   end
 
   create_table "upload_files", :force => true do |t|
@@ -72,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20110607035650) do
     t.integer  "upload_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_id"
   end
 
 end

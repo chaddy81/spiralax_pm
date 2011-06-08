@@ -1,6 +1,11 @@
 SpiralaxPm::Application.routes.draw do
 
+<<<<<<< HEAD
   resources :projects do
+=======
+  resources :projects
+  resources :milestones
+>>>>>>> 3161727fba2dd844895870aa4250bb0b6b6bccbf
 
     resources :milestones
 
@@ -8,9 +13,16 @@ SpiralaxPm::Application.routes.draw do
     
     resources :to_dos
 
+<<<<<<< HEAD
     resources :discussions do
       resources :comments
     end
+=======
+  resources :to_dos
+ 
+
+  
+>>>>>>> 3161727fba2dd844895870aa4250bb0b6b6bccbf
 
   end
   # The priority is based upon order of creation:
