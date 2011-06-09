@@ -1,35 +1,16 @@
 SpiralaxPm::Application.routes.draw do
 
-<<<<<<< HEAD
   root :to => 'projects#index'
-  
-=======
-<<<<<<< HEAD
-  resources :projects do
-=======
->>>>>>> 7c8a5e6f9b3130277a1b3fb6eb55e2ea9923f224
-  resources :projects
-  resources :milestones
->>>>>>> 3161727fba2dd844895870aa4250bb0b6b6bccbf
-
-    resources :milestones
-
-    resources :uploads
     
-    resources :to_dos
-
-<<<<<<< HEAD
+  resources :projects do
+    resources :milestones
+    resources :uploads
     resources :discussions do
       resources :comments
     end
-=======
-  resources :to_dos
- 
-
-  
->>>>>>> 3161727fba2dd844895870aa4250bb0b6b6bccbf
-
+    resources :to_dos
   end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

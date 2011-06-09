@@ -5,7 +5,8 @@ class ToDosController < ApplicationController
   # GET /to_dos
   # GET /to_dos.xml
   def index
-    @to_dos = ToDo.all
+    @project = Project.find(params[:project_id])
+    @to_dos = @project.to_dos.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,8 +17,8 @@ class ToDosController < ApplicationController
   # GET /to_dos/1
   # GET /to_dos/1.xml
   def show
-    @to_dos = ToDo.all
-    @to_do = ToDo.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @to_do = @project.to_dos.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +29,8 @@ class ToDosController < ApplicationController
   # GET /to_dos/new
   # GET /to_dos/new.xml
   def new
-    @to_do = ToDo.new
+    @project = Project.find(params[:project_id])
+    @to_do = @project.to_dos.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,17 +40,18 @@ class ToDosController < ApplicationController
 
   # GET /to_dos/1/edit
   def edit
-    @to_do = ToDo.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @to_do = @projects.to_dos.find(params[:id])
   end
 
   # POST /to_dos
   # POST /to_dos.xml
   def create
-    @to_do = ToDo.new(params[:to_do])
-
+    @project = Project.find(params[:project_id])
+    @to_do = @project.to_dos.new(params[:to_do])
     respond_to do |format|
       if @to_do.save
-        @to_do = ToDo.new(:title => params[:to_do][:title], :project_id => "1")
+        format.html { redirect_to(@to_do, :notice => 'To do was successfully created.') }
         format.html { redirect_to(@to_do, :notice => 'To do was successfully updated.') }
         #format.html { redirect_to(@to_do, :notice => 'To do was successfully created.') }
         #format.xml  { render :xml => @to_do, :status => :created, :location => @to_do }
@@ -65,7 +68,8 @@ class ToDosController < ApplicationController
   # PUT /to_dos/1
   # PUT /to_dos/1.xml
   def update
-    @to_do = ToDo.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @to_do = @project.to_dos.find(params[:id])
 
     respond_to do |format|
       if @to_do.update_attributes(params[:to_do])
@@ -81,7 +85,8 @@ class ToDosController < ApplicationController
   # DELETE /to_dos/1
   # DELETE /to_dos/1.xml
   def destroy
-    @to_do = ToDo.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @to_do = @project.to_dos.find(params[:id])
     @to_do.destroy
 
     respond_to do |format|
