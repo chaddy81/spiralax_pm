@@ -1,13 +1,13 @@
 class Upload < ActiveRecord::Base
   belongs_to :project
-  has_one :project
+
   has_attached_file :upload,
     :styles => { :thumb => '100x100>', :medium => '300x300>'},
     :storage => :s3,
-    :bucket => ENV['S3_BUCKET'],
+    :bucket => 'uploads.spiralax.com',
     :s3_credentials => {
-      :access_key_id => ENV['S3_KEY'],
-      :secret_access_key => ENV['S3_SECRET']
+      :access_key_id => 'AKIAISDLMBU4BI4CEINA',
+      :secret_access_key => '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'
     },
     :path => ":attachment/:id"
 end

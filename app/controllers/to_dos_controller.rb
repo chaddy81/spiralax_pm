@@ -6,7 +6,7 @@ class ToDosController < ApplicationController
   # GET /to_dos.xml
   def index
     @project = Project.find(params[:project_id])
-    @to_dos = @project.to_dos.all
+    @to_dos = ToDo.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +18,7 @@ class ToDosController < ApplicationController
   # GET /to_dos/1.xml
   def show
     @project = Project.find(params[:project_id])
-    @to_do = @project.to_dos.find(params[:id])
+    @to_do = ToDo.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -90,7 +90,7 @@ class ToDosController < ApplicationController
     @to_do.destroy
 
     respond_to do |format|
-      format.html { redirect_to(to_dos_url) }
+      format.html { redirect_to(project_to_dos_url) }
       format.xml  { head :ok }
     end
   end
