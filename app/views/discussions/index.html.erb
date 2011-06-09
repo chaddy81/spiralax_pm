@@ -13,13 +13,10 @@
   <tr>
     <td><%= discussion.title %></td>
     <td><%= discussion.comment %></td>
-    <td><%= link_to 'Show', discussion %></td>
-    <td><%= link_to 'Edit', edit_discussion_path(discussion) %></td>
-    <td><%= link_to 'Destroy', discussion, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Discussion', new_discussion_path %>
+<%= link_to 'New Discussion', new_project_discussion_path %>
