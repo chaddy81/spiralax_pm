@@ -19,9 +19,9 @@
     <td><%= milestone.priority %></td>
     <td><%= milestone.assigned %></td>
     <td><%= milestone.due %></td>
-    <td><%= link_to 'Show', milestone %></td>
-    <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>
-    <td><%= link_to 'Destroy', milestone, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', project_milestone_path(@project, milestone) %></td>
+    <td><%= link_to 'Edit', edit_project_milestone_path(@project, milestone) %></td>
+    <td><%= link_to 'Destroy', project_milestone_path(@project, milestone), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

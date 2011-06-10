@@ -13,6 +13,8 @@
   <tr>
     <td><%= discussion.title %></td>
     <td><%= discussion.comment %></td>
+	<td><%= link_to 'Show', project_discussion_path(@project, discussion) %></td>
+    <td><%= link_to 'Destroy', project_discussion_path(@project, discussion), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

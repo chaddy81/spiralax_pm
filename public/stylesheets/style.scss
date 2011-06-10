@@ -1,0 +1,50 @@
+.odd {
+  background: #f2f8fa;
+  td {
+    padding: 3px 7px; } }
+
+.even td {
+  padding: 3px 7px; }
+
+h1 {
+  font: bold 24px / 24px "century gothic", arial, sans-serif;
+  color: #646a6d; }
+
+th {
+  font: bold 14px / 14px "century gothic", arial, sans-serif;
+  color: #646a6d; }
+
+td {
+  font: normal 12px / 12px "century gothic", arial, sans-serif;
+  color: #646a6d;
+  padding: 5px 10px;
+  &:hover {
+    background-color: transparent; } }
+
+a {
+  font: normal 12px / 12px "century gothic", arial, sans-serif;
+  color: #dddddd;
+  &:hover {
+    color: blue;
+    background-color: transparent; } }
+
+ul li {
+  float: left;
+  margin-right: 15px;
+  list-style-type: none; }
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+  display: inline-block; }
+
+html[xmlns] .clearfix {
+  display: block; }
+
+* html .clearfix {
+  height: 1%; }

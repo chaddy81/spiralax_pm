@@ -14,8 +14,8 @@
       %td= to_do.due 
       %td= to_do.priority 
       %td= to_do.progress 
-      %td= link_to 'Show', project_to_do_path(@project, @to_dos) 
-      %td= link_to 'Destroy', project_to_do_path(@project, @to_dos), :confirm => 'Are you sure?', :method => :delete 
+      %td= link_to 'Show', project_to_do_path(@project, to_do) 
+      %td= link_to 'Destroy', project_to_do_path(@project, to_do), :confirm => 'Are you sure?', :method => :delete 
 
 %br
   

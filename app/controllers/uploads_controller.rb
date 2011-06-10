@@ -3,7 +3,7 @@ class UploadsController < ApplicationController
   # GET /Uploads.xml
   def index
     @project = Project.find(params[:project_id])
-    @uploads = Upload.all
+    @uploads = @project.uploads.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,8 @@ class UploadsController < ApplicationController
   # GET /Uploads/1
   # GET /Uploads/1.xml
   def show
-    @upload = Upload.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @upload = @project.uploads.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +26,8 @@ class UploadsController < ApplicationController
   # GET /Uploads/new
   # GET /Uploads/new.xml
   def new
-    @upload = Upload.new
+    @project = Project.find(params[:project_id])
+    @upload = @project.uploads.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,17 +37,19 @@ class UploadsController < ApplicationController
 
   # GET /Uploads/1/edit
   def edit
-    @upload = Upload.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @upload = @project.uploads.find(params[:id])
   end
 
   # POST /Uploads
   # POST /Uploads.xml
   def create
-    @upload = Upload.new(params[:upload])
+    @project = Project.find(params[:project_id])
+    @upload = @project.uploads.new(params[:upload])
 
     respond_to do |format|
       if @upload.save
-        format.html { redirect_to(@upload, :notice => 'Upload was successfully created.') }
+        format.html { redirect_to(project_upload_path(@project, @upload), :notice => 'Upload was successfully created.') }
         format.xml  { render :xml => @upload, :status => :created, :location => @upload }
       else
         format.html { render :action => "new" }
@@ -57,11 +61,12 @@ class UploadsController < ApplicationController
   # PUT /Uploads/1
   # PUT /Uploads/1.xml
   def update
-    @upload = Upload.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @upload = @project.uploads.find(params[:id])
 
     respond_to do |format|
       if @upload.update_attributes(params[:upload])
-        format.html { redirect_to(@upload, :notice => 'Upload was successfully updated.') }
+        format.html { redirect_to(project_upload_path(@project, @upload), :notice => 'Upload was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -73,7 +78,8 @@ class UploadsController < ApplicationController
   # DELETE /Uploads/1
   # DELETE /Uploads/1.xml
   def destroy
-    @upload = Upload.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @upload = @project.uploads.find(params[:id])
     @upload.destroy
 
     respond_to do |format|

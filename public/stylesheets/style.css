@@ -1,29 +1,50 @@
-.odd{background:#F2F8FA;}
-.odd td, .even td{padding:3px 7px;}
-h1{font:bold 24px/24px 'century gothic', arial, sans-serif; color:#646a6d;}
-th{font:bold 14px/14px 'century gothic', arial, sans-serif; color:#646a6d;}
-td{font:normal 12px/12px 'century gothic', arial, sans-serif; color:#646a6d;padding:5px 10px;}
-td:hover{background-color:transparent;}
-a{font:normal 12px/12px 'century gothic', arial, sans-serif; color:#ddd;}
-a:hover{color:blue;background-color:transparent;}
-ul li{float:left;margin-right:15px;list-style-type:none}
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
-}
- 
+.odd {
+  background: #f2f8fa; }
+  .odd td {
+    padding: 3px 7px; }
+
+.even td {
+  padding: 3px 7px; }
+
+h1 {
+  font: bold 24px/24px "century gothic", arial, sans-serif;
+  color: #646a6d; }
+
+th {
+  font: bold 14px/14px "century gothic", arial, sans-serif;
+  color: #646a6d; }
+
+td {
+  font: normal 12px/12px "century gothic", arial, sans-serif;
+  color: #646a6d;
+  padding: 5px 10px; }
+  td:hover {
+    background-color: transparent; }
+
+a {
+  font: normal 12px/12px "century gothic", arial, sans-serif;
+  color: #dddddd; }
+  a:hover {
+    color: blue;
+    background-color: transparent; }
+
+ul li {
+  float: left;
+  margin-right: 15px;
+  list-style-type: none; }
+
 .clearfix {
-	display: inline-block;
-}
- 
+  display: inline-block; }
+  .clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+
 html[xmlns] .clearfix {
-	display: block;
-}
- 
+  display: block; }
+
 * html .clearfix {
-	height: 1%;
-}
+  height: 1%; }
