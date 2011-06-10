@@ -15,7 +15,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1.xml
   def show
     @project = Project.find(params[:project_id])
-    @discussion = Discussions.find(params[:id])
+    @discussion = @project.discussions.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,7 +44,7 @@ class DiscussionsController < ApplicationController
   # POST /discussions.xml
   def create
     @project = Project.find(params[:project_id])
-    @discussion = @project.discussions.new(params[:id])
+    @discussion = @project.discussions.new(params[:discussion])
 
     respond_to do |format|
       if @discussion.save
