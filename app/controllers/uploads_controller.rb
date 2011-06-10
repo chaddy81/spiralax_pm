@@ -2,6 +2,7 @@ class UploadsController < ApplicationController
   # GET /Uploads
   # GET /Uploads.xml
   def index
+    @project = Project.find(params[:project_id])
     @uploads = Upload.all
 
     respond_to do |format|

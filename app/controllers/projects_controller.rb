@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
   # GET /projects.xml
   def index
     @projects = Project.all
-    @to_dos = ToDo.all
     
     respond_to do |format|
       format.html # index.html.erb
