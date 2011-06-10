@@ -32,7 +32,7 @@
 <% end %>
 </div>
 
-<%= form_for [@discussion, Comment.new] do |form| %>
+<%= form_for project_discussion_comment_path(@project, @discussion) do |form| %>
 	<%= form.label :name, "Name" %>
 	<%= form.text_field :name %><br />
 
@@ -42,5 +42,5 @@
 	<%= form.submit %>
 <% end %>
 
-<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
-<%= link_to 'Back', discussions_path %>
+<%= link_to 'Edit', edit_project_discussion_path(@discussion) %> |
+<%= link_to 'Back', project_discussions_path %>
