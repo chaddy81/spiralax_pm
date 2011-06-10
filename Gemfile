@@ -13,6 +13,7 @@ gem 'paperclip'
 gem 'heroku'
 gem 'aws-s3'
 gem 'lock'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
