@@ -10,29 +10,18 @@
 	<div style="background-color:#464646;width:100%;vertical-align:middle;height:100px;">
   		<a href="/"><img src="/images/logo.png" style="margin-top:14px;" /></a>
   	</div>
-<<<<<<< HEAD
+
 	<ul class="clearfix">
 		<li><%= link_to "To Do", project_to_dos_path(:project_id => '1') %></li>
 		<li><%= link_to "Discussions", project_discussions_path(:project_id => '1') %></li>
 		<li><%= link_to "Milestones", project_milestones_path(:project_id => '1') %></li>
 		<li><%= link_to "Uploads", project_uploads_path(:project_id => '1') %></li>
 	</ul>
-=======
-<<<<<<< HEAD
-	<ul class="clearfix">
-    	<li><a href="/projects/to_dos/">To Do</a></li>
-    	<li><%= link_to "To Do", to_dos_path %></li>
-
-    	<li><a href="/discussions/">Discussions</a></li>
-    	<li><a href="/uploads/">Uploads</a></li>
-		<li><a href="/milestones/">Milestones</a></li>
-	</ul>
-
-=======
 	
->>>>>>> cf82c6939d5fb1de8a8c2293fae0ba00ee7eb0f4
->>>>>>> 641f25814e58ea47e020df33b30a92ab39ad7a10
 <%= yield %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 </body>
 </html>
