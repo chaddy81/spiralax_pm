@@ -16,6 +16,7 @@
 		<li><%= link_to "Discussions", project_discussions_path(:project_id => '1') %></li>
 		<li><%= link_to "Milestones", project_milestones_path(:project_id => '1') %></li>
 		<li><%= link_to "Uploads", project_uploads_path(:project_id => '1') %></li>
+		<li><%= link_to "Signout", destroy_user_session_path %></li>
 	</ul>
 	
 <%= yield %>

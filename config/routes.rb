@@ -2,7 +2,11 @@ SpiralaxPm::Application.routes.draw do
 
   devise_for :users
 
-  root :to => 'projects#index'
+  #root :to => 'users#new'
+  authenticate :user do
+      root :to => "projects#index"
+    end
+    root :to => "devise/sessions#new"
     
   resources :projects do
     resources :milestones
