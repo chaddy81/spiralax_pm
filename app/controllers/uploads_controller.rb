@@ -1,4 +1,7 @@
 class UploadsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /Uploads
   # GET /Uploads.xml
   def index
