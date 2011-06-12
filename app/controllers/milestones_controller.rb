@@ -1,4 +1,7 @@
 class MilestonesController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /milestones
   # GET /milestones.xml
   def index

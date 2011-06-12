@@ -1,4 +1,6 @@
 class ToDosController < ApplicationController
+  
+  before_filter :authenticate_user!
 
   @priority = {'high' => 1, 'medium' => 2, 'low' => 3}
 
