@@ -1,3 +1,4 @@
+-# = render "layouts/nav"
 %h1 Listing to_dos
 %table
   %tr
@@ -18,5 +19,5 @@
       %td= link_to 'Destroy', project_to_do_path(@project, to_do), :confirm => 'Are you sure?', :method => :delete 
 
 %br
-  
+= session[:current_project]
 = link_to 'New To do', :controller => 'to_dos', :action => 'new'

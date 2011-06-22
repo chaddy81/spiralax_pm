@@ -1,12 +1,13 @@
 class ProjectsController < ApplicationController
-  
+
   before_filter :authenticate_user!
   
   # GET /projects
   # GET /projects.xml
   def index
     @projects = Project.all
-    
+    @current_project = session[:current_project]
+           
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @projects }
@@ -69,6 +70,17 @@ class ProjectsController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+  
+  def select
+    @project_stuff = Project.find(params[:project_stuff])
+    @current_project = @project_stuff.id
+    session[:current_project] = @current_project
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @project }
     end
   end
 

@@ -6,7 +6,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions.xml
   def index
     @project = Project.find(params[:project_id])
-    @discussions = Discussion.all
+    @discussions = @project.discussions.all
 
     respond_to do |format|
       format.html # index.html.erb
