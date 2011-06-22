@@ -9,7 +9,7 @@ class ToDosController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
     @to_dos = @project.to_dos.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @to_dos }
@@ -51,6 +51,8 @@ class ToDosController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @to_do = @project.to_dos.new(params[:to_do])
+    @to_do.project = current_project
+    
     respond_to do |format|
       if @to_do.save
         format.html { redirect_to(project_to_do_path(@project, @to_do), :notice => 'To do was successfully created.') }

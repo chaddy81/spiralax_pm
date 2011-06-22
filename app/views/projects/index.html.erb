@@ -1,23 +1,8 @@
+
 <h1>Projects</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<%= form_tag "/projects/select" do %>
+	<%= select_tag "project_stuff", options_from_collection_for_select(@projects, "id", "name"), :onchange => "this.form.submit();" %>
+<% end %> 
 
 <%= link_to 'New Project', new_project_path %>
