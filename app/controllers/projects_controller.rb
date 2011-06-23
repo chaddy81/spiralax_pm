@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @current_project = session[:current_project]
+    @project = Project.find(session[:current_project])
+    @discussions = @project.discussions.all
            
     respond_to do |format|
       format.html # index.html.erb
