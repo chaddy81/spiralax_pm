@@ -7,9 +7,12 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @current_project = session[:current_project]
-    @project = Project.find(session[:current_project])
-    @discussions = @project.discussions.all
-           
+    if @current_project.nil?
+      @discuss = Discussion.find(:all, :limit => 5, :order => "created_at desc",)
+    else
+      @project = Project.find(session[:current_project])
+      @discussions = @project.discussions.all
+    end       
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @projects }
@@ -81,7 +84,7 @@ class ProjectsController < ApplicationController
     session[:current_project] = @current_project
     
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {redirect_to(root_path)}
       format.xml  { render :xml => @project }
     end
   end
