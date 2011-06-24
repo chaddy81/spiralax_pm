@@ -1,6 +1,5 @@
-<%= image_tag @upload.upload.url %>
+
 <%= image_tag @upload.upload.url(:medium) %>
-<%= image_tag @upload.upload.url(:thumb) %>
 
 <%= link_to 'Show', project_uploads_path(@project, @upload) %> |
 <%= link_to 'Back', project_uploads_path %>
