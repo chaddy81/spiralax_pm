@@ -2,6 +2,7 @@
 <table>
 	<tr>
 		<th>File Name</th>
+		<th>File Type</th>
 		<th>Image</th>
 		<th>Created</th>
 	</tr>
@@ -11,7 +12,8 @@
 <% @uploads.each do |x| %>
 <% d = x.created_at %>
 <tr>
-  <td><%= x.upload_file_name%></td>
+  <td><%= x.upload_file_name %></td>
+  <td><%= x.upload_content_type %></td>
   <td><%= image_tag x.upload.url(:original) %></td>
   <td><%= d.strftime('%b %d, %Y') %></td>
   <td><%= link_to 'Show', project_upload_path(@project, x) %></td>
