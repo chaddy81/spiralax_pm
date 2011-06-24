@@ -1,7 +1,7 @@
 module ProjectsHelper
   def activity
     if session[:current_project].nil?
-      return "Poop"
+      render "projects/all_activity"
     else
       render "projects/activity"
     end

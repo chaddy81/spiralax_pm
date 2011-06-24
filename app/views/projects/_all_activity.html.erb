@@ -1,0 +1,9 @@
+<h3>Discussions</h3>
+<table>
+<% @discuss.each do |p| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+    <td><%= p.title %></td>
+    <td><%= p.comment %></td>
+  </tr>
+<% end %>
+</table>
