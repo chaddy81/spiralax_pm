@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @current_project = session[:current_project]
     if @current_project.nil?
-      @discuss = Discussion.find(:all, :limit => 5, :order => "created_at desc",)
+      @discuss = Discussion.find(:all, :limit => 5, :order => "created_at desc")
     else
       @project = Project.find(session[:current_project])
       @discussions = @project.discussions.all
