@@ -6,4 +6,12 @@ module ProjectsHelper
       render "projects/activity"
     end
   end
+  
+  def select
+    if session[:current_project].nil?
+      render "projects/select_with_default"
+    else
+      render "projects/select_without_default"
+    end
+  end
 end

@@ -1,0 +1,3 @@
+<%= form_tag "/projects/select" do %>
+	<%= select_tag "project_stuff", options_from_collection_for_select(@projects, "id", "name", selected = session[:current_project]),:include_blank => true, :onchange => "this.form.submit();" %>
+<% end %>
