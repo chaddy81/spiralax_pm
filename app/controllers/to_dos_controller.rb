@@ -31,7 +31,7 @@ class ToDosController < ApplicationController
   # GET /to_dos/new
   # GET /to_dos/new.xml
   def new
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @to_do = @project.to_dos.new
 
     respond_to do |format|
@@ -49,9 +49,8 @@ class ToDosController < ApplicationController
   # POST /to_dos
   # POST /to_dos.xml
   def create
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @to_do = @project.to_dos.new(params[:to_do])
-    @to_do.project = current_project
     
     respond_to do |format|
       if @to_do.save
