@@ -7,7 +7,7 @@ module ProjectsHelper
     end
   end
   
-  def select
+  def select_project
     if session[:current_project].nil?
       render "projects/select_with_default"
     else
