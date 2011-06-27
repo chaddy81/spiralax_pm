@@ -1,4 +1,5 @@
 <header>
 	<%= image_tag("logo.png") %>
 	<span id="user_email">Hello, <%= current_user.email %></span>
+	<span id="header_link"><%= link_to "Manage Projects", projects_manage_url %></span>
 </header>
