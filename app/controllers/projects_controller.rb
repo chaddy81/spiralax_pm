@@ -88,6 +88,15 @@ class ProjectsController < ApplicationController
       format.xml  { render :xml => @project }
     end
   end
+  
+  def manage
+    @projects = Project.all
+    
+      respond_to do |format|
+      format.html
+      format.xml  { render :xml => @projects }
+    end
+  end
 
   # DELETE /projects/1
   # DELETE /projects/1.xml
@@ -96,7 +105,7 @@ class ProjectsController < ApplicationController
     @project.destroy
 
     respond_to do |format|
-      format.html { redirect_to(projects_url) }
+      format.html { redirect_to(projects_manage_url) }
       format.xml  { head :ok }
     end
   end
