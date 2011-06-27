@@ -10,6 +10,11 @@ header {
     top: -25px;
     left: 550px;
     color: #fff; }
+  header span#header_link a {
+    position: relative;
+    top: 0px;
+    left: 335px;
+    color: #fff; }
 
 #container {
   padding: 20px; }
