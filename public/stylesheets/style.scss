@@ -4,7 +4,14 @@ body {
   
 header {
   background:#666;
-  padding:20px;}
+  padding:20px;
+    span#user_email {
+      position:relative;
+      top:-25px;
+      left:550px;
+      color:#fff;
+    }
+}
   
 #container {
   padding:20px;}

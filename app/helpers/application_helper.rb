@@ -7,4 +7,12 @@ module ApplicationHelper
       render 'layouts/nav'
     end
   end
+  
+  def header
+    if current_user.nil?
+      return
+    else
+      render 'layouts/header'
+    end
+  end
 end
