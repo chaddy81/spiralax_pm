@@ -90,6 +90,7 @@ class ProjectsController < ApplicationController
   end
   
   def manage
+    session[:current_project] = nil
     @projects = Project.all
     
       respond_to do |format|
