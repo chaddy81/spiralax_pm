@@ -49,6 +49,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.xml
   def create
+    session[:current_project] = nil
     @project = Project.new(params[:project])
 
     respond_to do |format|
