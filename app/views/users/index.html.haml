@@ -1,0 +1,17 @@
+-# = render "layouts/nav"
+%h1 Listing Users
+%table
+  %tr
+    %th Id
+    %th Email
+
+  - @users.each do |user| 
+    %tr{ :class => cycle('odd', 'even') }
+      %td= user.id 
+      %td= user.email  
+      %td= link_to 'Show', user 
+      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete 
+
+%br
+
+= link_to 'New User', :controller => 'users', :action => 'new'

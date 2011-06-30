@@ -5,7 +5,7 @@ class MilestonesController < ApplicationController
   # GET /milestones
   # GET /milestones.xml
   def index
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @milestones = @project.milestones.all
 
     respond_to do |format|
@@ -17,7 +17,7 @@ class MilestonesController < ApplicationController
   # GET /milestones/1
   # GET /milestones/1.xml
   def show
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @milestone = @project.milestones.find(params[:id])
 
     respond_to do |format|
@@ -29,7 +29,7 @@ class MilestonesController < ApplicationController
   # GET /milestones/new
   # GET /milestones/new.xml
   def new
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @milestone = @project.milestones.new
 
     respond_to do |format|
@@ -40,14 +40,14 @@ class MilestonesController < ApplicationController
 
   # GET /milestones/1/edit
   def edit
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @milestone = @project.milestones.find(params[:id])
   end
 
   # POST /milestones
   # POST /milestones.xml
   def create
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @milestone = @project.milestones.new(params[:milestone])
 
     respond_to do |format|
@@ -64,7 +64,7 @@ class MilestonesController < ApplicationController
   # PUT /milestones/1
   # PUT /milestones/1.xml
   def update
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @milestone = @project.milestones.find(params[:id])
 
     respond_to do |format|
@@ -81,7 +81,7 @@ class MilestonesController < ApplicationController
   # DELETE /milestones/1
   # DELETE /milestones/1.xml
   def destroy
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @milestone = @project.milestones.find(params[:id])
     @milestone.destroy
 

@@ -22,17 +22,17 @@
 
 <h3>Comments</h3> 
 <div id="comments">
-<% @discussion.comments.each do |comment|%>
-	<p>By: <%= comment.name %></p>
-	<%= comment.comment %>
+<% @discussion.comments.each do |c|%>
+	<p>By: <%= c.name %></p>
+	<%= c.comment %>
 	<p>
-		<%= button_to "Delete", [@discussion, comment],
+		<%= button_to "Delete", discussion_comment_path,
 				:confirm => "Are you sure?", :method => :delete %>
 	</p>
 <% end %>
 </div>
 
-<%= form_for project_discussion_comment_path(@project, @discussion) do |form| %>
+<%= form_for ([@discussion, @discussion.comments.create]), :html => { :multipart => true } do |form| %>
 	<%= form.label :name, "Name" %>
 	<%= form.text_field :name %><br />
 
@@ -42,5 +42,5 @@
 	<%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to 'Edit', edit_project_discussion_path(@discussion) %> |
-<%= link_to 'Back', project_discussions_path %>
+<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+<%= link_to 'Back', discussions_path %>

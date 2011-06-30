@@ -2,6 +2,7 @@ class Discussion < ActiveRecord::Base
   belongs_to :project
 
 	has_many :comments
+	
 	has_attached_file :photo,
     :styles => { :thumb => '100x100>', :medium => '300x300>'},
     :storage => :s3,

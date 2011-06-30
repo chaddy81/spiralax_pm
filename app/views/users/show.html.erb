@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @to_do.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @to_do.body %>
+</p>
+
+<p>
+  <b>Due:</b>
+  <%= @to_do.due %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @to_do.priority %>
+</p>
+
+<p>
+  <b>Progress:</b>
+  <%= @to_do.progress %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_to_do_path(@to_do) %> |
+
