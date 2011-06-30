@@ -1,24 +1,29 @@
 SpiralaxPm::Application.routes.draw do
 
   devise_for :users
+  resources :users
   
   match 'projects/select' => 'projects#select'
   match 'projects/manage' => 'projects#manage'
+
   #root :to => 'users#new'
   authenticate :user do
-      root :to => "projects#index"
-    end
-    root :to => "devise/sessions#new"
+    root :to => "projects#index"
+  end
+  
+  root :to => "devise/sessions#new"
     
   resources :projects do
     resources :milestones
     resources :uploads
-    resources :discussions do
-      resources :comments
-    end
+    resources :discussions
     resources :to_dos
   end
-
+  
+  resources :discussions do
+    resources :comments
+  end 
+  
 
   
   # The priority is based upon order of creation:

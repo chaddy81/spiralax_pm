@@ -17,9 +17,9 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1
   # GET /discussions/1.xml
   def show
-    @project = Project.find(params[:project_id])
+    @project = Project.find(session[:current_project])
     @discussion = @project.discussions.find(params[:id])
-
+     
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @discussion }
