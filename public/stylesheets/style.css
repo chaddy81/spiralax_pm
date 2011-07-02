@@ -17,7 +17,7 @@ header {
     left: 765px;
     color: #fff; }
 
-div.page {
+.page {
   width: 960px !important;
   margin: 0 auto;
   position: relative; }
