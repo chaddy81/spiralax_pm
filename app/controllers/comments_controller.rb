@@ -1,15 +1,19 @@
 class CommentsController < ApplicationController
   def create
-    @discussion = Discussion.find(params[:discussion_id])
-    @comment = @discussion.comments.new
+    @project = Project.find(session[:current_project])
+    @discussion = @project.discussions.find(params[:discussion_id])
+    @comment = @discussion.comments.create(params[:comment])
     
-    redirect_to @discussion
+    redirect_to project_discussion_path(@project, @discussion)
   end
   
   def destroy
-    @discussion = Discussion.find_by_id(params[:discussion_id])
-    @comment = @discussion.comments.find_by_id(params[:id])
+    @project = Project.find(session[:current_project])
+    @discussion = @project.discussions.find(params[:discussion_id])
+    @comment = @discussion.comments.find(params[:id])
     @comment.destroy
-    redirect_to @discussion
+    
+    redirect_to project_discussion_path(@project, @discussion)
+    
   end
 end
