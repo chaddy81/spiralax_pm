@@ -8,12 +8,13 @@ header {
   position: relative; }
   header span#user_email {
     position: absolute;
-    top: 20px;
+    top: 0px;
     right: 10px;
-    color: #fff; }
+    color: #fff;
+    font-size: 18px; }
   header span#header_link {
     position: absolute;
-    top: 45px;
+    top: 40px;
     right: 10px;
     color: #fff; }
 
