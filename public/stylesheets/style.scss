@@ -3,14 +3,14 @@ body { margin:0; padding:0; }
 header {
   background:#666;
   padding:20px;
+  position:relative;
     span#user_email {
       position:relative;
       top:-25px;
       left:550px;
       color:#fff;}
     span#header_link {
-      position:relative;
-      display:block;
+      position:absolute;
       top:-20px;
       left:765px;
       color:#fff;}
