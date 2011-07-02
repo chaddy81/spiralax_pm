@@ -3,5 +3,5 @@
     = image_tag("logo.png")
     %span#user_email
       Hello, #{current_user.email}
-    %span#header_link= button_to "Manage Projects", projects_manage_url
-    %span#header_link= button_to "Manage Users", users_url
+    %span#header_link= link_to "Manage Projects", projects_manage_url
+    %span#header_link= link_to "Manage Users", users_path
