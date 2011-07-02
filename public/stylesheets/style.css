@@ -4,15 +4,15 @@ body {
 
 header {
   background: #666;
-  padding: 20px; }
+  padding: 20px;
+  position: relative; }
   header span#user_email {
     position: relative;
     top: -25px;
     left: 550px;
     color: #fff; }
   header span#header_link {
-    position: relative;
-    display: block;
+    position: absolute;
     top: -20px;
     left: 765px;
     color: #fff; }
