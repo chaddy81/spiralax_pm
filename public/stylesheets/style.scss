@@ -8,10 +8,11 @@ header {
       top:-25px;
       left:550px;
       color:#fff;}
-    span#header_link a {
+    span#header_link {
       position:relative;
-      top:0px;
-      left:335px;
+      display:block;
+      top:-20px;
+      left:765px;
       color:#fff;}
 }
   
@@ -27,30 +28,30 @@ header {
   padding: 3px 7px; }
 
 h1 {
-  font: bold 24px / 24px "century gothic", arial, sans-serif;
-  color: #646a6d; }
+  font: bold 24px / 24px arial, sans-serif;
+  color:#242424; }
   
 h2 {
-  font: bold 20px / 20px "century gothic", arial, sans-serif;
-  color: #646a6d; }
+  font: bold 20px / 20px arial, sans-serif;
+  color:#242424; }
   
 h3 {
-  font: bold 18px / 18px "century gothic", arial, sans-serif;
-  color: #646a6d; }
+  font: bold 18px / 18px arial, sans-serif;
+  color:#242424; }
 
 th {
-  font: bold 14px / 14px "century gothic", arial, sans-serif;
-  color: #646a6d; }
+  font: bold 14px / 14px arial, sans-serif;
+  color:#242424; }
 
 td {
-  font: normal 12px / 12px "century gothic", arial, sans-serif;
-  color: #646a6d;
+  font: normal 12px / 12px arial, sans-serif;
+  color:#242424;
   padding: 5px 10px;
   &:hover {
     background-color: transparent; } }
 
 a {
-  font: normal 12px / 12px "century gothic", arial, sans-serif;
+  font: normal 12px / 12px arial, sans-serif;
   color: #dddddd;
   &:hover {
     color: blue;
@@ -188,7 +189,8 @@ input[type=submit] {
   color:#fff;
   text-shadow:0px 1px 2px #95a8d2;
   cursor:pointer;
-  box-shadow:0 0 3px #aaa, inset 0 0 3px #4b6789; }
+  box-shadow:0 0 3px #aaa, inset 0 0 3px #4b6789;
+  margin:10px; }
   
 textarea {height:150px;}
 label {display: block; margin-bottom:5px;}
