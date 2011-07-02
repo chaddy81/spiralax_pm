@@ -1,6 +1,6 @@
-<h3>Discussions</h3>
+<h3>Recent Discussions</h3>
 <table>
-<% @discussions.each do |discussion| %>
+<% @discussions.take(5).each do |discussion| %>
   <tr class="<%= cycle('even', 'odd') %>">
     <td><%= discussion.title %></td>
     <td><%= discussion.comment %></td>

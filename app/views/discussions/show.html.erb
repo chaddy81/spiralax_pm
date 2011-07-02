@@ -26,13 +26,13 @@
 	<p>By: <%= c.name %></p>
 	<%= c.comment %>
 	<p>
-		<%= button_to "Delete", discussion_comment_path,
+		<%= button_to "Delete", project_discussion_comment_path(session[:current_project], @discussion, c),
 				:confirm => "Are you sure?", :method => :delete %>
 	</p>
 <% end %>
 </div>
 
-<%= form_for ([@discussion, @discussion.comments.create]), :html => { :multipart => true } do |form| %>
+<%= form_for ([@project, @discussion, @discussion.comments.build]) do |form| %>
 	<%= form.label :name, "Name" %>
 	<%= form.text_field :name %><br />
 
@@ -42,5 +42,5 @@
 	<%= form.submit "Submit" %>
 <% end %>
 
-<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
-<%= link_to 'Back', discussions_path %>
+<%= link_to 'Edit', edit_project_discussion_path(@discussion) %> |
+<%= link_to 'Back', project_discussions_path %>
