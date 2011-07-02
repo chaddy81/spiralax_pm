@@ -12,10 +12,8 @@ header {
     right: 10px;
     color: #fff;
     font: bold 18px/18px arial, sans-serif; }
-  header span#header_link {
+  header span#header_link a {
     position: relative;
-    top: 30px;
-    right: 10px;
     color: #fff; }
 
 .page {
