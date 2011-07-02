@@ -7,13 +7,13 @@ header {
   padding: 20px;
   position: relative; }
   header span#user_email {
-    position: relative;
-    top: -25px;
-    left: 550px;
+    position: absolute;
+    top: 50px;
+    left: 765px;
     color: #fff; }
   header span#header_link {
     position: absolute;
-    top: 50px;
+    top: 65px;
     left: 765px;
     color: #fff; }
 
