@@ -8,8 +8,12 @@ test/
 script/
 lib/
 doc/
+<<<<<<< HEAD
 config/.bundle
 db/*.sqlite3
 log/*.log
 tmp/
 public/system/photos/
+=======
+config/
+>>>>>>> 84da8668fdadbd56f6a6590cf0ae1816a9d0e458
