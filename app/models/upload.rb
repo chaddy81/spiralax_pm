@@ -5,9 +5,6 @@ class Upload < ActiveRecord::Base
     :styles => { :thumb => '100x100>', :medium => '300x300>'},
     :storage => :s3,
     :bucket => 'uploads.spiralax.com',
-    :s3_credentials => {
-      :access_key_id => 'AKIAISDLMBU4BI4CEINA',
-      :secret_access_key => '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'
-    },
+    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
     :path => ":attachment/:id"
 end
