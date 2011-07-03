@@ -2,4 +2,10 @@
 db/*.sqlite3
 log/*.log
 tmp/
-public/system/photos/
+public/
+vendor/
+test/
+script/
+lib/
+doc/
+config/
