@@ -10,6 +10,7 @@ lib/
 doc/
 config/.bundle
 config/*.yml
+config/initializers/setup_mail.rb
 db/*.sqlite3
 log/*.log
 tmp/
