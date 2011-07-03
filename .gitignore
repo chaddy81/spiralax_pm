@@ -2,4 +2,14 @@
 db/*.sqlite3
 log/*.log
 tmp/
+public/
+vendor/
+test/
+script/
+lib/
+doc/
+config/.bundle
+db/*.sqlite3
+log/*.log
+tmp/
 public/system/photos/
