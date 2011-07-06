@@ -4,9 +4,9 @@
     %span#user_email
       = gravatar('chad.bartels@gmail.com', 50)
       Hello, #{current_user.email}
-    = if can? :update, @project
-      %span#header_link 
+    - if can? :update, @project
+      %span#header_link
         = link_to "Manage Projects", projects_manage_url
-    = if can? :update, @user
-      %span#header_link 
+    - if can? :update, @user
+      %span#header_link
         = link_to "Manage Users", users_url
