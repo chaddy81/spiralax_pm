@@ -1,7 +1,12 @@
 %header
   %section.page
-    = image_tag("logo.png")
+    = link_to image_tag("logo.png"), root_path
     %span#user_email
+      = gravatar('chad.bartels@gmail.com', 50)
       Hello, #{current_user.email}
-    %span#header_link= link_to "Manage Projects", projects_manage_url
-    %span#header_link= link_to "Manage Users", users_path
+    = if can? :update, @project
+      %span#header_link 
+        = link_to "Manage Projects", projects_manage_url
+    = if can? :update, @user
+      %span#header_link 
+        = link_to "Manage Users", users_url

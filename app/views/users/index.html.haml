@@ -10,10 +10,10 @@
     %tr{ :class => cycle('odd', 'even') }
       %td= user.id 
       %td= user.email
-      %td= user.admin  
+      %td= gravatar('chad.bartels@gmail.com', 50) 
       %td= link_to 'Show', user 
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete 
 
 %br
 
-= button_to 'New User', :controller => 'users', :action => 'new'
+= link_to 'New User', :controller => 'users', :action => 'new'

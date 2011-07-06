@@ -14,6 +14,7 @@ gem 'heroku'
 gem 'aws-s3'
 gem 'devise'
 gem 'tlsmail'
+gem 'cancan'
 
 # Use unicorn as the web server
 # gem 'unicorn'
