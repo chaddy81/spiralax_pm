@@ -2,7 +2,6 @@
 db/*.sqlite3
 log/*.log
 tmp/
-public/
 vendor/
 test/
 script/
@@ -15,10 +14,3 @@ db/*.sqlite3
 log/*.log
 tmp/
 public/system/photos/
-public/stylesheets/.sass-cache/114f3dc544cf7e60c3e15a459ae451cee0340aa6/style.scssc
-public/stylesheets/.sass-cache/114f3dc544cf7e60c3e15a459ae451cee0340aa6/style.scssc
-public/stylesheets/style.css
-public/stylesheets/style.scss
-public/stylesheets/.sass-cache/114f3dc544cf7e60c3e15a459ae451cee0340aa6/style.scssc
-public/stylesheets/style.css
-public/stylesheets/style.scss
