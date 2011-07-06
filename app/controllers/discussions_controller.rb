@@ -1,6 +1,9 @@
 class DiscussionsController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :get_user
+  before_filter :accessible_roles
+  load_and_authorize_resource
   
   # GET /discussions
   # GET /discussions.xml

@@ -1,6 +1,9 @@
 class ToDosController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :get_user
+  before_filter :accessible_roles
+  load_and_authorize_resource
 
   @priority = {'high' => 1, 'medium' => 2, 'low' => 3}
 

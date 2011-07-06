@@ -1,6 +1,9 @@
 class ProjectsController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :get_user, :only => [:index,:new,:edit,:manage]
+  before_filter :accessible_roles, :only => [:new, :edit, :show, :update, :create, :manage]
+  load_and_authorize_resource :only => [:show,:new,:destroy,:edit,:update,:manage]
   
   
   # GET /projects

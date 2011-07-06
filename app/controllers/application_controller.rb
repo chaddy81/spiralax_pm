@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :get_user
-  before_filter :accessible_roles
-  load_and_authorize_resource
-  
   # Get roles accessible by the current user
   #----------------------------------------------------
   def accessible_roles
@@ -15,6 +11,11 @@ class ApplicationController < ActionController::Base
   #----------------------------------------
   def get_user
     @current_user = current_user
+  end
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = exception.message
+    render 'public/422.html'
   end
   
 end
