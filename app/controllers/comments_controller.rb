@@ -1,4 +1,9 @@
 class CommentsController < ApplicationController
+  
+  before_filter :get_user
+  before_filter :accessible_roles
+  load_and_authorize_resource
+  
   def create
     @project = Project.find(session[:current_project])
     @discussion = @project.discussions.find(params[:discussion_id])

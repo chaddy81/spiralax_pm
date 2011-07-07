@@ -1,16 +1,23 @@
 class MilestonesController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :get_user
+  before_filter :accessible_roles
+  load_and_authorize_resource
   
   # GET /milestones
   # GET /milestones.xml
   def index
-    @project = Project.find(session[:current_project])
-    @milestones = @project.milestones.all
+    if can? :read, Milestone
+      @project = Project.find(session[:current_project])
+      @milestones = @project.milestones.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @milestones }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @milestones }
+      end
+    else
+      return "Error"
     end
   end
 

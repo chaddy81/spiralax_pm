@@ -146,28 +146,14 @@ form {
 span.login:before {
   content: '';
   display:block;
-  height:5px;
+  height:3px;
   width:100px;
   position:absolute;
   z-index:-1;
-  bottom:5px;
-  left:10px;
-  box-shadow:-10px 5px 10px #888;
+  bottom:3px;
+  left:6px;
+  box-shadow:-10px 5px 8px #000;
   -webkit-transform: translate(0px,-7px) skew(0deg,23deg) rotate(-25deg);
-  -moz-transform: translate(-7px,-3px) skew(0deg,23deg) rotate(-25deg);
- }
- 
- span.login:after {
-  content: '';
-  display:block;
-  height:5px;
-  width:100px;
-  position:absolute;
-  z-index:-1;
-  bottom:5px;
-  left:10px;
-  box-shadow:-10px 5px 10px #888;
-  -webkit-transform: translate(-7px,-5px) skew(0deg,23deg) rotate(-25deg);
   -moz-transform: translate(-7px,-3px) skew(0deg,23deg) rotate(-25deg);
  }
  
@@ -196,3 +182,4 @@ input[type=submit] {
 textarea {height:150px;}
 label {display: block; margin-bottom:5px;}
 select {border:1px solid #b6b6b6;width:225px;height:28px;}
+.gravatar {vertical-align:middle;border:3px solid #fff;}

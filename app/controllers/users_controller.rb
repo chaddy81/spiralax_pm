@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :get_user
+  before_filter :accessible_roles
+  load_and_authorize_resource
   
   # GET /to_dos
   # GET /to_dos.xml

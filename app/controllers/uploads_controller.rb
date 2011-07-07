@@ -1,6 +1,9 @@
 class UploadsController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :get_user
+  before_filter :accessible_roles
+  load_and_authorize_resource
   
   # GET /Uploads
   # GET /Uploads.xml

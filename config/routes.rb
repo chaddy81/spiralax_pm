@@ -5,7 +5,10 @@ SpiralaxPm::Application.routes.draw do
   
   match 'projects/select' => 'projects#select'
   match 'projects/manage' => 'projects#manage'
+<<<<<<< HEAD
   match '/users/password/edit' => 'devise/passwords', :action => 'edit'
+=======
+>>>>>>> 26438d415689f004adf002f5ca10ac3a0b5dec99
 
   #root :to => 'users#new'
   authenticate :user do
