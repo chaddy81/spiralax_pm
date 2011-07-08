@@ -1,4 +1,4 @@
-<%= form_for [@project, @to_do], :html => { :multipart => true } do |f| %>
+<%= form_for @user, :html => { :multipart => true } do |f| %>
   <% if @to_do.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@to_do.errors.count, "error") %> prohibited this to_do from being saved:</h2>

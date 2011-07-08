@@ -84,9 +84,10 @@ class ProjectsController < ApplicationController
   end
   
   def select
-    @project_stuff = Project.find(params[:project_stuff])
-    @current_project = @project_stuff.id
-    session[:current_project] = @current_project
+    @user = current_user.email
+    
+    # @project_stuff = Project.find(params[:project_stuff])
+    @project_stuff = Project.find(params[:user_id])
     
     respond_to do |format|
       format.html {redirect_to(root_path)}
