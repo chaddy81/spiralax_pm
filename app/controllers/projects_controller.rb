@@ -37,6 +37,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.xml
   def new
+    @user = current_user
     @project = Project.new
 
     respond_to do |format|
@@ -55,7 +56,8 @@ class ProjectsController < ApplicationController
   def create
     session[:current_project] = nil
     @project = Project.new(params[:project])
-
+    latest = Project.last.id
+    Ownership.create(:user_id => current_user.id, :project_id => latest + 1)
     respond_to do |format|
       if @project.save
         format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
@@ -84,10 +86,8 @@ class ProjectsController < ApplicationController
   end
   
   def select
-    @user = current_user.email
-    
-    # @project_stuff = Project.find(params[:project_stuff])
-    @project_stuff = Project.find(params[:user_id])
+    @project_stuff = Project.find(params[:project_stuff]).id
+    session[:current_project] = @project_stuff
     
     respond_to do |format|
       format.html {redirect_to(root_path)}

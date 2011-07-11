@@ -14,4 +14,8 @@ module ProjectsHelper
       render "projects/select_without"
     end
   end
+  
+  def get_user_projects
+    return User.find(current_user.id).projects
+  end
 end
