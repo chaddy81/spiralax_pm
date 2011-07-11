@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     @current_user = current_user
   end
   
+  def get_project
+    @current_project = session[:current_project]
+  end
+  
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
     render 'public/422.html'

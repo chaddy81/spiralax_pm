@@ -23,4 +23,17 @@ module ApplicationHelper
       render 'layouts/alert'
     end
   end
+  
+  def current_project
+    return session[:current_project]
+  end
+  
+  def devise_invitable_custom_params(resource_name)
+    case resource_name
+    when :user
+      {
+        :project_id => session[:current_project]
+      }
+    end
+  end
 end

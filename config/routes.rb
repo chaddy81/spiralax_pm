@@ -1,6 +1,6 @@
 SpiralaxPm::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :invitations => 'invitations' }
   resources :users
   
   match 'projects/select' => 'projects#select'

@@ -54,13 +54,18 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.xml
   def create
-    session[:current_project] = nil
     @project = Project.new(params[:project])
-    latest = Project.last.id
-    Ownership.create(:user_id => current_user.id, :project_id => latest + 1)
+    # if Project.last.id.nil?
+      # latest = 0
+    # else
+      # latest = Project.last.id
+    # end
+    # Ownership.create(:user_id => current_user.id, :project_id => latest + 1)
     respond_to do |format|
       if @project.save
-        format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
+        latest = Project.last.id
+        Ownership.create(:user_id => current_user.id, :project_id => latest)
+        format.html { redirect_to(projects_path, :notice => 'Project was successfully created.') }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
         format.html { render :action => "new" }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110709044558) do
+ActiveRecord::Schema.define(:version => 20110711015045) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -44,10 +44,8 @@ ActiveRecord::Schema.define(:version => 20110709044558) do
   end
 
   create_table "ownerships", :id => false, :force => true do |t|
-    t.integer  "project_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "project_id"
+    t.integer "user_id"
   end
 
   create_table "projects", :force => true do |t|
@@ -133,6 +131,14 @@ ActiveRecord::Schema.define(:version => 20110709044558) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "role"
+    t.string   "invitation_token",       :limit => 60
+    t.datetime "invitation_sent_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
   end
+
+  add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
+  add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
 
 end

@@ -9,6 +9,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
+      can :create, :all
       cannot :read, User
       cannot :read, Project, :action => 'manage'
     end
