@@ -4,9 +4,12 @@
     %span#user_email
       = gravatar('chad.bartels@gmail.com', 50)
       Hello, #{current_user.email}
+    %span#header_link
+      = link_to "Invite Users", new_user_invitation_path
     - if can? :update, @project
       %span#header_link
         = link_to "Manage Projects", projects_manage_url
     - if can? :update, @user
       %span#header_link
         = link_to "Manage Users", users_url
+    

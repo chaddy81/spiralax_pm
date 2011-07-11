@@ -13,6 +13,7 @@ gem 'paperclip'
 gem 'heroku'
 gem 'aws-s3'
 gem 'devise'
+gem 'devise_invitable', '~> 0.4.0'
 gem 'tlsmail'
 gem 'cancan', '1.6'
 

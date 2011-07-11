@@ -56,6 +56,26 @@ Devise.setup do |config|
   # Setup a pepper to generate the encrypted password.
   # config.pepper = "a15ca4366c9d182af6ec40f4bd07cf2942484fa11f768a9abb30dd7f8db9267c6649f4c1f79a780fdc0ffda30c25f907b0de141620d8eea811d88ef6b4f50094"
 
+  # ==> Configuration for :invitable
+  # The period the generated invitation token is valid, after
+  # this period, the invited resource won't be able to accept the invitation.
+  # When invite_for is 0 (the default), the invitation won't expire.
+  config.invite_for = 1.weeks
+  
+  # Number of invitations users can send.
+  # If invitation_limit is nil, users can send unlimited invitations.
+  # If invitation_limit is 0, users can't send invitations.
+  # If invitation_limit n > 0, users can send n invitations.
+  # Default: nil
+  # config.invitation_limit = 5
+  
+  # The key to be used to check existing users when sending an invitation
+  #config.invite_key = :email
+  
+  # Flag that force a record to be valid before being actually invited 
+  # Default: false
+  # config.validate_on_invite = true
+
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
   # he will be able to access your application without confirming. Default is 0.days
