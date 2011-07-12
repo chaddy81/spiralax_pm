@@ -8,8 +8,7 @@ class InvitationsController < ApplicationController
 
   # GET /resource/invitation/new
   def new
-    @project = params[:project]
-    abc = params[:abc]
+    @what = Project.find(session[:current_project])
     build_resource
     render_with_scope :new
     
@@ -17,9 +16,9 @@ class InvitationsController < ApplicationController
 
   # POST /resource/invitation
   def create
-    @project = params[:project]
+    @what = params[:user][:project]
     self.resource = resource_class.invite!(params[resource_name], current_inviter)
-    
+   
     if resource.errors.empty?
       set_flash_message :notice, :send_instructions, :email => self.resource.email
       respond_with resource, :location => redirect_location(resource_name, resource)
@@ -66,5 +65,14 @@ class InvitationsController < ApplicationController
 
   def after_accept_path_for(resource)
     after_sign_in_path_for(resource)
+  end
+  
+  def devise_invitable_custom_params(resource_name)
+    case resource_name
+    when :project
+      {
+        :project_id => session[:current_project]
+      }
+    end
   end
 end

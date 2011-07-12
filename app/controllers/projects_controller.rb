@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :get_user, :only => [:index,:new,:edit,:manage]
   before_filter :accessible_roles, :only => [:new, :edit, :show, :update, :create, :manage]
-  load_and_authorize_resource :only => [:show,:new,:destroy,:edit,:update,:manage]
+  load_and_authorize_resource :only => [:show,:new,:destroy,:edit,:update, :create, :manage]
   
   
   # GET /projects
@@ -55,16 +55,11 @@ class ProjectsController < ApplicationController
   # POST /projects.xml
   def create
     @project = Project.new(params[:project])
-    # if Project.last.id.nil?
-      # latest = 0
-    # else
-      # latest = Project.last.id
-    # end
-    # Ownership.create(:user_id => current_user.id, :project_id => latest + 1)
+    
     respond_to do |format|
       if @project.save
         latest = Project.last.id
-        Ownership.create(:user_id => current_user.id, :project_id => latest)
+        Ownership.create(:user_id => current_user.id, :project_id => latest, :role_id => 1)
         format.html { redirect_to(projects_path, :notice => 'Project was successfully created.') }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
@@ -101,7 +96,7 @@ class ProjectsController < ApplicationController
   end
   
   def manage
-    @projects = Project.all
+    @projects = User.find(current_user.id).projects
     
       respond_to do |format|
       format.html
