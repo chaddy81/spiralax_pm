@@ -2,7 +2,7 @@
   %section.page
     = link_to image_tag("logo.png"), root_path
     %span#user_email
-      = gravatar('chad.bartels@gmail.com', 50)
+      = gravatar(current_user.email, 50)
       Hello, #{current_user.email}
     %span#header_link
       = link_to "Invite Users", new_user_invitation_path

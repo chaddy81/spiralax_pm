@@ -1,13 +1,16 @@
 <h2>Send invitation</h2>
 
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name) do |f| %>
-  <%= devise_error_messages! %>
   
-  <%= f.hidden_field :project, :value => session[:current_project] %>
+  
+  <%= f.text_field :invited_project_id, :value => current_project %>
   
   <p><%= f.label :email %><br />
   <%= f.text_field :email %></p>
 
+  <p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
+  
   <p><%= f.submit "Send an invitation" %></p>
 <% end %>
 

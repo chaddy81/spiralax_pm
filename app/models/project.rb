@@ -13,5 +13,5 @@ class Project < ActiveRecord::Base
 
   
   accepts_nested_attributes_for :discussions
-
+  attr_accessible :project
 end

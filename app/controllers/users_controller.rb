@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   # GET /to_dos
   # GET /to_dos.xml
   def index
-    @users = User.all
     
+    @users = User.all
+    @invited_project_id =  User.invited_project_id
+    @name = User.name
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }

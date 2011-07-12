@@ -22,4 +22,13 @@ class ApplicationController < ActionController::Base
     render 'public/422.html'
   end
   
+  def devise_invitable_custom_params(resource_name)
+    case resource_name
+    when :user
+      {
+        :project_id => session[:current_project]
+      }
+    end
+  end
+  
 end

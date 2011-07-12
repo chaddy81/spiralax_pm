@@ -8,23 +8,26 @@ class InvitationsController < ApplicationController
 
   # GET /resource/invitation/new
   def new
-    @what = Project.find(session[:current_project])
-    build_resource
-    render_with_scope :new
+    
+    # build_resource
+    # render_with_scope :new
     
   end
 
   # POST /resource/invitation
   def create
-    @what = params[:user][:project]
-    self.resource = resource_class.invite!(params[resource_name], current_inviter)
-   
-    if resource.errors.empty?
-      set_flash_message :notice, :send_instructions, :email => self.resource.email
-      respond_with resource, :location => redirect_location(resource_name, resource)
-    else
-      respond_with_navigational(resource) { render_with_scope :new }
-    end
+    # @what = params[:user][:project]
+    # self.resource = resource_class.invite!(params[resource_name], current_inviter)
+#    
+    # if resource.errors.empty?
+      # set_flash_message :notice, :send_instructions, :email => self.resource.email
+      # respond_with resource, :location => redirect_location(resource_name, resource)
+    # else
+      # respond_with_navigational(resource) { render_with_scope :new }
+    # end
+    @project_id = current_project
+    User.invite!(:email => "chad.bartels@spiralax.com", :name => "John Doe", :invited_project_id => 26)
+    redirect_to root_url
   end
 
   # GET /resource/invitation/accept?invitation_token=abcdef
@@ -67,12 +70,8 @@ class InvitationsController < ApplicationController
     after_sign_in_path_for(resource)
   end
   
-  def devise_invitable_custom_params(resource_name)
-    case resource_name
-    when :project
-      {
-        :project_id => session[:current_project]
-      }
-    end
+  def current_project
+    return session[:current_project]
   end
+  
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110711015045) do
+ActiveRecord::Schema.define(:version => 20110712050055) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -44,15 +44,9 @@ ActiveRecord::Schema.define(:version => 20110711015045) do
   end
 
   create_table "ownerships", :id => false, :force => true do |t|
-    t.integer  "project_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "project_users", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "role_id"
+    t.integer "project_id"
+    t.integer "user_id"
   end
 
   create_table "projects", :force => true do |t|
@@ -62,9 +56,9 @@ ActiveRecord::Schema.define(:version => 20110711015045) do
     t.datetime "updated_at"
   end
 
-  create_table "projects_users", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "projects_users", :id => false, :force => true do |t|
+    t.integer "project_id"
+    t.integer "user_id"
   end
 
   create_table "roles", :force => true do |t|
@@ -117,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20110711015045) do
   end
 
   create_table "users", :force => true do |t|
+    t.text     "name"
     t.string   "email"
     t.string   "encrypted_password",     :limit => 128
     t.string   "reset_password_token"
@@ -143,14 +138,7 @@ ActiveRecord::Schema.define(:version => 20110711015045) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
-  end
-
-  add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
-  add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
-
-  create_table "users_projects", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "project_id"
+    t.integer  "invited_project_id"
   end
 
 end
