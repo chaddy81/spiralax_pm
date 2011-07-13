@@ -26,14 +26,16 @@ class InvitationsController < ApplicationController
       # respond_with_navigational(resource) { render_with_scope :new }
     # end
     @project_id = current_project
-    User.invite!(:email => params[:user][:email], :name => params[:user][:name], :invited_project_id => params[:user][:invite_project_id])
+    User.invite!(:email => params[:user][:email], :name => params[:user][:name], :invited_project_id => params[:user][:invited_project_id])
     redirect_to root_url
   end
 
   # GET /resource/invitation/accept?invitation_token=abcdef
   def edit
-    if params[:invitation_token] && self.resource = resource_class.first(:conditions => { :invitation_token => params[:invitation_token] })
+    if params[:invitation_token] && self.resource = resource_class.first(:conditions => { :invitation_token => params[:invitation_token], :invited_project_id => params[:invited_project_id] })
       render_with_scope :edit
+      $new_user = User.find_by_email(params[:email])
+      Ownership.create(:user_id => $new_user.id, :project_id => params[:invited_project_id], :role_id => 2)
     else
       set_flash_message(:alert, :invitation_token_invalid)
       redirect_to after_sign_out_path_for(resource_name)
