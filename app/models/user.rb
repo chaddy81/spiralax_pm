@@ -14,13 +14,4 @@ class User < ActiveRecord::Base
   def role?(role)
     return self.roles.find_by_name(role.to_s)
   end
-  
-  def devise_invitable_custom_params(resource_name)
-    case resource_name
-    when :user
-      {
-        :project_id => session[:current_project]
-      }
-    end
-  end
 end

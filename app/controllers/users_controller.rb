@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def index
     
     @users = User.all
-    @invited_project_id =  User.invited_project_id
+    # @invited_project_id =  User.invited_project_id
     @name = User.name
     respond_to do |format|
       format.html # index.html.erb

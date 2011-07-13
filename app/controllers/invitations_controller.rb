@@ -26,7 +26,7 @@ class InvitationsController < ApplicationController
       # respond_with_navigational(resource) { render_with_scope :new }
     # end
     @project_id = current_project
-    User.invite!(:email => "chad.bartels@spiralax.com", :name => "John Doe", :invited_project_id => 26)
+    User.invite!(:email => params[:email], :name => params[:name], :invited_project_id => params[:invited_project_id])
     redirect_to root_url
   end
 
