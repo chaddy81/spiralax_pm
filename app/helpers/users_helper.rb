@@ -5,4 +5,6 @@ module UsersHelper
     image_tag "http://www.gravatar.com/avatar/#{the_hash}?s=#{size}&d=mm", :class => 'gravatar'
   end
   
+
+  
 end
