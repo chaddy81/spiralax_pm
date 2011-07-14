@@ -16,11 +16,11 @@ module ApplicationHelper
     end
   end
   
-  def alert_it
+  def message
     if alert.nil?
       return
     else
-      render 'layouts/alert'
+      render 'layouts/message'
     end
   end
   
