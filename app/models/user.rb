@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :ownerships
   
   def role?(role)
-    return self.roles.find_by_name(role.to_s)
+    return !!self.roles.find_by_name(role.to_s)
   end
  
 end
