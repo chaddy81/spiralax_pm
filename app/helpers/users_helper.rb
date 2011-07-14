@@ -5,6 +5,8 @@ module UsersHelper
     image_tag "http://www.gravatar.com/avatar/#{the_hash}?s=#{size}&d=mm", :class => 'gravatar'
   end
   
-
+  def role?(role)
+    return !!self.roles.find_by_name(role.to_s)
+  end
   
 end
