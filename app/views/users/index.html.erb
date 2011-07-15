@@ -1,0 +1,20 @@
+<h1>Listing Users</h1>
+<table>
+  <tr>
+    <th> Id</th>
+    <th> Email</th>
+    <th> Admin?</th>
+  </tr>
+    
+  <% @users.each do |user| %>
+    <% if current_user.id != user.id %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= user.id %><td>
+        <td><%= user.email %><td>
+        <td><%= gravatar(user.email, 50) %><td>
+        <td><%= link_to 'Show', user %><td>
+        <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %><td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

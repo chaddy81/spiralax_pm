@@ -6,15 +6,19 @@ header {
   background: #666;
   padding: 20px;
   position: relative; }
+  header #manage_rights {
+    position: absolute;
+    top: 50px;
+    right: 10px; }
+    header #manage_rights span#header_link a {
+      position: relative;
+      color: #fff; }
   header span#user_email {
     position: absolute;
     top: 0px;
     right: 10px;
     color: #fff;
     font: bold 18px/18px arial, sans-serif; }
-  header span#header_link a {
-    position: relative;
-    color: #fff; }
 
 .page {
   width: 960px !important;
@@ -127,6 +131,8 @@ body#sessions {
       color: #fff;
       text-shadow: 0px 1px 2px #95a8d2;
       box-shadow: 0 0 3px #aaa, inset 0 0 3px #4b6789; }
+  body#sessions p.notice {
+    text-align: center; }
   body#sessions p.alert {
     width: 250px;
     background: #f1f2bf;
@@ -193,3 +199,15 @@ select {
 .gravatar {
   vertical-align: middle;
   border: 3px solid #fff; }
+
+.logout {
+  float: right;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: #a3b5cb;
+  padding: 7px 15px;
+  color: #fff;
+  text-shadow: 0px 1px 2px #95a8d2;
+  cursor: pointer;
+  box-shadow: 0 0 3px #aaa, inset 0 0 3px #4b6789;
+  margin: 10px 10px 10px 0; }

@@ -1,9 +1,9 @@
-<ul>
+<ul id="nav" class="clearfix">
 	<li><%= link_to "Home", root_url %></li>
 	<li><%= link_to "To Do", project_to_dos_path(:project_id => session[:current_project])%></li>
 	<li><%= link_to "Discussions", project_discussions_path(:project_id => session[:current_project])%></li>
 	<li><%= link_to "Milestones", project_milestones_path(:project_id => session[:current_project])%></li>
 	<li><%= link_to "Uploads", project_uploads_path(:project_id => session[:current_project])%></li>
-	<li><%= link_to "Logout", destroy_user_session_url %></li>
 </ul>
+<%=  link_to "Logout", destroy_user_session_url, :class => "logout" %></li>
 <br />
