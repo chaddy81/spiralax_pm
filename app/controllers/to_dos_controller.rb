@@ -14,8 +14,9 @@ class ToDosController < ApplicationController
     @to_dos = @project.to_dos.all
     
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @to_dos }
+      # format.html # index.html.erb
+      # format.xml  { render :xml => @to_dos }
+      render :json => @to_dos
     end
   end
  
@@ -27,7 +28,8 @@ class ToDosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @to_do }
+      # format.xml  { render :xml => @to_do }
+      render :json => @project.to_dos.find(params[:id])
     end
   end
 
@@ -57,15 +59,17 @@ class ToDosController < ApplicationController
     
     respond_to do |format|
       if @to_do.save
-        format.html { redirect_to(project_to_do_path(@project, @to_do), :notice => 'To do was successfully created.') }
+        # format.html { redirect_to(project_to_do_path(@project, @to_do), :notice => 'To do was successfully created.') }
         #format.html { redirect_to(@to_do, :notice => 'To do was successfully created.') }
         #format.xml  { render :xml => @to_do, :status => :created, :location => @to_do }
+        render :json => @to_do
       else
         
         render :action => 'new'
 
         #format.html { render :action => "new" }
         #format.xml  { render :xml => @to_do.errors, :status => :unprocessable_entity }
+        # render :json => @to_do
       end
     end
   end
@@ -78,8 +82,9 @@ class ToDosController < ApplicationController
 
     respond_to do |format|
       if @to_do.update_attributes(params[:to_do])
-        format.html { redirect_to(@to_do, :notice => 'To do was successfully updated.') }
-        format.xml  { head :ok }
+        # format.html { redirect_to(@to_do, :notice => 'To do was successfully updated.') }
+        # format.xml  { head :ok }
+        render :json => @to_do
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @to_do.errors, :status => :unprocessable_entity }
@@ -95,8 +100,9 @@ class ToDosController < ApplicationController
     @to_do.destroy
 
     respond_to do |format|
-      format.html { redirect_to(project_to_dos_url) }
-      format.xml  { head :ok }
+      # format.html { redirect_to(project_to_dos_url) }
+      # format.xml  { head :ok }
+      render :json => @to_do
     end
   end
 end

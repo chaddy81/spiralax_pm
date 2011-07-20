@@ -1,23 +1,4 @@
--# = render "layouts/nav"
-%h1 Listing to_dos
-%table
-  %tr
-    %th Title
-    %th Body
-    %th Due
-    %th Priority
-    %th Progress
-
-  - @to_dos.each do |to_do| 
-    %tr{ :class => cycle('odd', 'even') }
-      %td= to_do.title 
-      %td= to_do.body 
-      %td= to_do.due 
-      %td= to_do.priority 
-      %td= to_do.progress 
-      %td= link_to 'Show', project_to_do_path(@project, to_do) 
-      %td= link_to 'Destroy', project_to_do_path(@project, to_do), :confirm => 'Are you sure?', :method => :delete 
-
-%br
-
-= link_to 'New To do', new_project_to_do_path
+:javascript
+  $(function() {
+      App.init();
+  });

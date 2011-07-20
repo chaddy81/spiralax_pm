@@ -3,4 +3,8 @@ class ToDo < ActiveRecord::Base
 
 	validates :title, :presence => true
 	validates :body, :presence => true
+	
+	def to_json(options = {})
+    super(options.merge(:only => [ :id, :title, :due, :priority, :progress, :project_id ]))
+  end
 end
