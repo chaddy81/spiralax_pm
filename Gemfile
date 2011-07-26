@@ -16,6 +16,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'tlsmail'
 gem 'cancan', '1.6'
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
